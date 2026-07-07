@@ -449,9 +449,19 @@ p {
   overflow: hidden;
 }
 
+/* Hero layer stack (bottom → top): photo → canvas → overlay → content.
+   Explicit z-index because inserting the canvas between siblings breaks
+   implicit source-order stacking. */
 .hero-media {
   position: absolute;
   inset: 0;
+  z-index: 0;
+  /* Static, no-JS fallback material: a soft indigo glow that reads as the
+     "resting frame" of the wave canvas even before (or without) script.js. */
+  background:
+    radial-gradient(120% 90% at 82% 12%, rgba(90, 92, 220, 0.42), transparent 60%),
+    radial-gradient(90% 80% at 8% 100%, rgba(42, 42, 114, 0.5), transparent 62%),
+    var(--ink);
 }
 
 .hero-media img {
@@ -460,10 +470,34 @@ p {
   object-fit: cover;
 }
 
+/* Glowing wave canvas — sits above the photo, below the darkening overlay.
+   pointer-events:none so every click falls through to the CTAs on the
+   content layer. Hidden from AT via aria-hidden in markup. */
+.hero-wave-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  /* Screen-blend the glow onto the photo so lines read as light, not paint. */
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+}
+
+/* script.js flips this on once the first frame is painted, so the canvas
+   fades in rather than popping. */
+.hero-wave-canvas.is-live {
+  opacity: 1;
+}
+
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: linear-gradient(
     100deg,
     rgba(9, 10, 16, 0.94) 0%,
@@ -474,7 +508,7 @@ p {
 
 .hero-grid {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: grid;
   grid-template-columns: minmax(0, 1.32fr) minmax(300px, 0.68fr);
   gap: clamp(36px, 5vw, 72px);
@@ -1533,5 +1567,13 @@ html.js .reveal.is-visible {
   .insight-card:hover,
   .insight-card:hover .insight-media img {
     transform: none;
+  }
+
+  /* Quiet the wave canvas: script.js paints a single static frame and skips
+     RAF, and we soften it so the hero stays polished but calm. The static
+     .hero-media glow underneath still carries the hero if JS never runs. */
+  .hero-wave-canvas {
+    opacity: 0.55 !important;
+    transition: none;
   }
 }
