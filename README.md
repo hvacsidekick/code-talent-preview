@@ -6,6 +6,10 @@ Static preview for the Code Talent website redesign.
 
 The GitHub Pages build serves the files in `docs/`.
 
+Live preview: https://hvacsidekick.github.io/code-talent-preview/
+
+Repository: https://github.com/hvacsidekick/code-talent-preview
+
 ## Key Artifacts
 
 - `docs/` - publishable static preview

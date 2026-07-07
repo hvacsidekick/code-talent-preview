@@ -8,6 +8,14 @@ Local URL:
 
 `http://127.0.0.1:4177`
 
+GitHub Pages preview:
+
+`https://hvacsidekick.github.io/code-talent-preview/`
+
+GitHub repository:
+
+`https://github.com/hvacsidekick/code-talent-preview`
+
 Local files:
 
 - `site/index.html`
