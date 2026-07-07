@@ -1,0 +1,6 @@
+.imgcheck/
+.playwright-mcp/
+source-pages/
+worker-*.log
+worker-*.err
+homepage-*.jpeg

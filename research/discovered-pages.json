@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "/",
+    "label": "Home",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/team",
+    "label": "Team",
+    "showOnHeader": true,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/meetups",
+    "label": "Meetups",
+    "showOnHeader": true,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/matt",
+    "label": "Matt",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/rita",
+    "label": "Rita",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/riley",
+    "label": "Riley",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/contact-us",
+    "label": "Contact",
+    "showOnHeader": false,
+    "showOnFooter": true,
+    "type": "page"
+  },
+  {
+    "slug": "/conor",
+    "label": "Conor",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/bret",
+    "label": "Bret",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/eric",
+    "label": "Eric",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/kevin",
+    "label": "Kevin",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/justin",
+    "label": "Justin",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/nick",
+    "label": "Nick",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/sisson",
+    "label": "Sisson",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/about",
+    "label": "About",
+    "showOnHeader": true,
+    "showOnFooter": true,
+    "type": "page"
+  },
+  {
+    "slug": "/blog",
+    "label": "Blog",
+    "showOnHeader": true,
+    "showOnFooter": false,
+    "type": "blog"
+  },
+  {
+    "slug": "/privacy-policy",
+    "label": "Privacy Policy",
+    "showOnHeader": false,
+    "showOnFooter": true,
+    "type": "page"
+  },
+  {
+    "slug": "/services",
+    "label": "Our Services",
+    "showOnHeader": true,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/candidate",
+    "label": "Candidate",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  },
+  {
+    "slug": "/candidate-intake",
+    "label": "Candidate Intake",
+    "showOnHeader": false,
+    "showOnFooter": false,
+    "type": "page"
+  }
+]
