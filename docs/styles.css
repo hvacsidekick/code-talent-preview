@@ -820,8 +820,7 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://cdn.durable.co/blocks/32D6qfnPPLzosxWGniwpJnl6d3G72Oz595QJACydfjY3mSPkZJQs4I3HyFRIFRnA.jpg")
-    center / cover no-repeat;
+  background: url("assets/codetalent/team-collage.webp") center / cover no-repeat;
   opacity: 0.32;
 }
 
@@ -989,6 +988,23 @@ p {
   color: rgba(255, 255, 255, 0.76);
 }
 
+/* Community photo strip: real event moments, evenly cropped so mixed
+   portrait/landscape sources read as one consistent band. */
+.community-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 1.5vw, 18px);
+  margin: 0 0 clamp(40px, 5vw, 60px);
+}
+
+.community-strip img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+}
+
 /* Supported groups directory */
 .groups {
   padding-top: clamp(34px, 4vw, 48px);
@@ -1049,6 +1065,8 @@ p {
 }
 
 .team-card {
+  display: flex;
+  flex-direction: column;
   padding: 24px;
   border-radius: var(--radius);
   background: #fff;
@@ -1059,6 +1077,22 @@ p {
 .team-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-2);
+}
+
+/* Headshots vary in source dimensions (367px–1920px, mostly square with a few
+   landscape). A fixed 1/1 ratio + cover normalizes the crop; center-top keeps
+   faces in frame when a taller/wider source is cropped. */
+.team-photo {
+  width: 100%;
+  /* height:auto lets aspect-ratio drive the box; without it the width/height
+     HTML attrs (kept for CLS) would pin height and defeat the square crop. */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  margin-bottom: 18px;
+  border-radius: var(--radius-sm);
+  background: var(--paper-cool);
 }
 
 .team-card h3 {
@@ -1074,7 +1108,8 @@ p {
 
 .team-contact {
   display: inline-block;
-  margin-top: 18px;
+  margin-top: auto;
+  padding-top: 18px;
   color: var(--indigo);
   font-family: var(--font-mono);
   font-size: 0.82rem;
@@ -1089,7 +1124,8 @@ p {
 
 .team-note {
   display: inline-block;
-  margin-top: 18px;
+  margin-top: auto;
+  padding-top: 18px;
   color: #7a8091;
   font-size: 0.82rem;
 }
@@ -1520,6 +1556,10 @@ html.js .reveal.is-visible {
 
   .community-aside {
     flex-direction: column;
+  }
+
+  .community-strip {
+    grid-template-columns: 1fr 1fr;
   }
 
   .calendar-frame iframe {
